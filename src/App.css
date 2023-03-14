@@ -1,22 +1,55 @@
 :root {
-  --opacity: #ffffff63;
-  --main: #85c9a9;
-  --secondary: #4771fa67;
+  --opacity: #0000000d;
+  --main: #fcedc3;
+  --secondary: #2285ff67;
 }
 
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 .App {
   text-align: center;
   padding: 0px;
   margin: 0px;
   background-color: var(--main);
+  text-decoration: none;
+}
+
+.Link {
+  text-decoration: none;
+}
+
+.headerNav {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .Header {
-  padding: 10px;
+  padding: 0px;
   margin: 0px;
   background-color: var(--main);
   color: var(--secondary);
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .HeaderNav {
+    flex-direction: column;
+  }
 }
 
 .Nav {
@@ -70,10 +103,11 @@
   padding: 5px;
   background-color: var(--secondary);
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .review__card:hover {
-  box-shadow: inset 0px 0px 12px 1px var(--main);
+  box-shadow: inset 0px 0px 12px 1px rgb(96, 96, 96);
 }
 
 @media only screen and (max-width: 600px) {
@@ -82,31 +116,119 @@
   }
 }
 
+.single__card {
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.single__headers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__title {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 32px;
+}
+
+.single__timeUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.single__time {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  margin: 5px;
+}
+.single__user {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.single__catVote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__votes {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.single__category {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 24px;
+}
+
+.imgPara {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+  .imgPara {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.single__img {
+  border-radius: 10px;
+  width: 70%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.single__para {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.single__comments {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 .review__title {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
+  text-decoration: none;
 }
 
 .review__time {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
 }
 .review__user {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
 }
 
 .review__category {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
 }
 
 .review__img {
@@ -117,18 +239,21 @@
   padding: 0px;
 }
 
+.review__para {
+  background-color: var(--opacity);
+  border-radius: 5px;
+}
+
 .review__comments {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
+  text-decoration: none;
 }
 
 .review__votes {
   background-color: var(--opacity);
   border-radius: 5px;
-  width: fit-content;
-  block-size: fit-content;
+  text-decoration: none;
 }
 
 .like {
