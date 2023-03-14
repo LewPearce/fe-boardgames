@@ -125,12 +125,6 @@ p {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .single__card {
-    width: 90vw;
-  }
-}
-
 .single__headers {
   display: flex;
   align-items: center;
@@ -149,7 +143,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 8px;
+  font-size: 14px;
 }
 
 .single__time {
@@ -167,7 +161,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
 }
 
 .single__votes {
@@ -175,12 +168,14 @@ p {
   border-radius: 5px;
   text-decoration: none;
   margin: 10px;
+  font-size: 20px;
 }
 
 .single__category {
   background-color: var(--opacity);
   border-radius: 5px;
   margin: 10px;
+  font-size: 24px;
 }
 
 .imgPara {

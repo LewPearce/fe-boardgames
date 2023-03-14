@@ -23,22 +23,22 @@ export const Review = ({ reviewList, setReviewList }) => {
       <>
         <section className="single__card">
           <div className="single__headers">
-            <h1 className="single__title"> {currentReview.title}</h1>
+            <h2 className="single__title"> {currentReview.title}</h2>
             <div className="single__timeUser">
-              <h2 className="single__time">{timeConverter(currentReview)}</h2>
-              <h2 className="single__user">by {currentReview.owner}</h2>
+              <h3 className="single__time">{timeConverter(currentReview)}</h3>
+              <h3 className="single__user">by {currentReview.owner}</h3>
             </div>
           </div>
           <div className="single__catVote">
-            <h2 className="single__votes">
+            <h3 className="single__votes">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/2961/2961957.png"
                 alt="like"
                 className="like"
               ></img>{" "}
               {currentReview.votes} votes{" "}
-            </h2>
-            <h2 className="single__category">{currentReview.category}</h2>
+            </h3>
+            <h3 className="single__category">{currentReview.category}</h3>
           </div>
           <div className="imgPara">
             <img
@@ -48,9 +48,9 @@ export const Review = ({ reviewList, setReviewList }) => {
             ></img>
             <p className="single__para">{currentReview.review_body}</p>
           </div>
-          <h2 className="single__comments">
+          <h3 className="single__comments">
             {currentReview.comment_count} comments
-          </h2>
+          </h3>
         </section>
       </>
     );
