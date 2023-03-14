@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { getReviewById } from "../axios/api";
 import { timeConverter } from "../utils";
 import { useParams } from "react-router-dom";
+import { Comments } from "./Comments";
 
 export const Review = ({ reviewList, setReviewList }) => {
   const { review_id } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [wantComments, setWantComments] = useState(false);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -15,6 +18,11 @@ export const Review = ({ reviewList, setReviewList }) => {
       setIsLoading(false);
     });
   }, [setCurrentReview, review_id]);
+
+  const handleComments = (event) => {
+    event.preventDefault();
+    setWantComments(true);
+  };
 
   if (isLoading) {
     return <h1>LOADING</h1>;
@@ -48,9 +56,18 @@ export const Review = ({ reviewList, setReviewList }) => {
             ></img>
             <p className="single__para">{currentReview.review_body}</p>
           </div>
-          <h3 className="single__comments">
-            {currentReview.comment_count} comments
-          </h3>
+          <button onClick={handleComments}>Show Comments</button>
+          {wantComments ? (
+            <Comments
+              setComments={setComments}
+              review_id={review_id}
+            //   comments={comments}
+            />
+          ) : (
+            <h3 className="single__comments">
+              {currentReview.comment_count} comments
+            </h3>
+          )}
         </section>
       </>
     );
