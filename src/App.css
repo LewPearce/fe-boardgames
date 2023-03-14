@@ -16,6 +16,7 @@
   margin: 0px;
   background-color: var(--main);
   color: var(--secondary);
+  text-decoration: none;
 }
 
 .Nav {

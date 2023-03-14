@@ -32,7 +32,7 @@ export const Nav = ({ user, setUser, currentCategory }) => {
         </li>
         <li>
           <Link to="/reviews">
-            <button className="Nav__Button">reviews</button>
+            <button className="Nav__Button">Reviews</button>
           </Link>
         </li>
       </ul>
