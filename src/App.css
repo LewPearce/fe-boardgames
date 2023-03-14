@@ -1,15 +1,21 @@
+:root {
+  --opacity: #ffffff63;
+  --main: #85c9a9;
+  --secondary: #4771fa67;
+}
+
 .App {
   text-align: center;
   padding: 0px;
   margin: 0px;
-
-  background-color: rgb(70, 43, 226);
+  background-color: var(--main);
 }
 
 .Header {
   padding: 10px;
   margin: 0px;
-  background-color: blueviolet;
+  background-color: var(--main);
+  color: var(--secondary);
 }
 
 .Nav {
@@ -17,12 +23,12 @@
   margin: 0px;
   list-style: none;
   display: flex;
-  align-content:center;
+  align-content: center;
   justify-content: center;
 }
 
 .Nav__Button {
-  background-color: rgb(255, 200, 0);
+  background-color: var(--opacity);
   padding: 10px;
   margin: 10px;
   color: rgb(0, 0, 0);
@@ -30,15 +36,100 @@
   border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
+  color: var(--secondary);
 }
 
 .Nav__Button:hover {
-  background-color: aquamarine;
+  background-color: var(--secondary);
+  color: var(--main);
 }
 
 .logged {
-  background-color: brown;
-  color: aliceblue;
+  background-color: var(--opacity);
+  color: var(--main);
   margin: 0px;
-  padding: 3px;
+  padding: 0px;
+  font-size: 20px;
+}
+
+.review__list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.review__card {
+  width: 30vw;
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+  background-color: var(--secondary);
+  border-radius: 10px;
+}
+
+.review__card:hover {
+  box-shadow: inset 0px 0px 12px 1px var(--main);
+}
+
+@media only screen and (max-width: 600px) {
+  .review__card {
+    width: 90vw;
+  }
+}
+
+.review__title {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.review__time {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+.review__user {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.review__category {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.review__img {
+  border-radius: 10px;
+  width: 70%;
+  max-height: 180px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.review__comments {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.review__votes {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.like {
+  width: 13px;
 }
