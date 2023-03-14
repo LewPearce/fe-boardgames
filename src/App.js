@@ -2,6 +2,7 @@ import "./App.css";
 import { Header } from "./Components/Header";
 import { Nav } from "./Components/Nav";
 import { Home } from "./Components/Home";
+import { Review } from "./Components/Review";
 import { Reviews } from "./Components/Reviews";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -12,12 +13,14 @@ function App() {
   const [currentCategory, setCurrentCategory] = useState("");
   return (
     <div className="App">
+      <div className="headerNav">
       <Header></Header>
       <Nav
         user={user}
         setUser={setUser}
         currentCategory={currentCategory}
       ></Nav>
+      </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route
@@ -26,6 +29,7 @@ function App() {
             <Reviews reviewList={reviewList} setReviewList={setReviewList} />
           }
         ></Route>
+        <Route path="/reviews/:review_id" element={<Review />}></Route>
       </Routes>
     </div>
   );
