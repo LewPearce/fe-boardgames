@@ -169,6 +169,22 @@ p {
   text-decoration: none;
   margin: 10px;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 20px;
+  font-style: normal;
+}
+
+.vote__icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 .single__category {
@@ -254,8 +270,4 @@ p {
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
-}
-
-.like {
-  width: 13px;
 }

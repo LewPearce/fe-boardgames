@@ -1,5 +1,4 @@
 export const timeConverter = (review) => {
-  console.log(review);
   const months = [
     `Jan`,
     `Feb`,
@@ -19,6 +18,5 @@ export const timeConverter = (review) => {
   let month = months[monthInd];
   let day = date.slice(8, 10);
   let year = date.slice(0, 4);
-  console.log(`${day} ${month} ${year}`);
   return `${day} ${month} ${year}`;
 };
