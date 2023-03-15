@@ -11,7 +11,12 @@ export const Comments = ({ setComments, review_id, comments }) => {
 
   return (
     <>
-      <h2>comments go here with a map!!</h2>
+      <ul className="comment__list">
+        <li></li>
+        {comments.map((comment) => (
+          <li className="comments">{comment.body}</li>
+        ))}
+      </ul>
     </>
   );
 };

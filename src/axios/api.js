@@ -18,6 +18,6 @@ export const getReviewById = (review_id) => {
 
 export const getComments = (review_id) => {
   return boardgameApi.get(`/reviews/${review_id}/comments`).then((response) => {
-    console.log(response.data);
+    return response.data;
   });
 };

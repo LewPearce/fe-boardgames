@@ -21,7 +21,11 @@ export const Review = ({ reviewList, setReviewList }) => {
 
   const handleComments = (event) => {
     event.preventDefault();
-    setWantComments(true);
+    if (wantComments) {
+      setWantComments(false);
+    } else {
+      setWantComments(true);
+    }
   };
 
   if (isLoading) {
@@ -56,17 +60,17 @@ export const Review = ({ reviewList, setReviewList }) => {
             ></img>
             <p className="single__para">{currentReview.review_body}</p>
           </div>
-          <button onClick={handleComments}>Show Comments</button>
+          <button onClick={handleComments} className="single__commentButton">
+            Show Comments
+          </button>
           {wantComments ? (
             <Comments
               setComments={setComments}
               review_id={review_id}
-            //   comments={comments}
+              comments={comments}
             />
           ) : (
-            <h3 className="single__comments">
-              {currentReview.comment_count} comments
-            </h3>
+            <div></div>
           )}
         </section>
       </>
