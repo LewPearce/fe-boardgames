@@ -15,3 +15,9 @@ export const getReviewById = (review_id) => {
     return response.data.review;
   });
 };
+
+export const patchVotes = (review_id) => {
+  return boardgameApi.patch(`/reviews/${review_id}`).then((response) => {
+    return response.data.review;
+  });
+};
