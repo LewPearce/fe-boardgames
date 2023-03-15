@@ -168,16 +168,21 @@ p {
   border-radius: 5px;
   text-decoration: none;
   margin: 10px;
-  font-size: 20px;
+}
+
+.single__votes:active {
+  box-shadow: inset 0px 0px 10px #f9595f;
+}
+
+.single__votesflex {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-}
-
-h3 {
-  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
   font-style: normal;
 }
 

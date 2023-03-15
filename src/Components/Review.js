@@ -53,7 +53,7 @@ export const Review = ({ reviewList, setReviewList }) => {
           <div className="single__catVote">
             <button onClick={handleLike} className="single__votes">
               {liked ? (
-                <div>
+                <div className="single__votesflex">
                   <img
                     className="vote__icon"
                     src="https://cdn-icons-png.flaticon.com/512/2589/2589054.png"
@@ -63,12 +63,14 @@ export const Review = ({ reviewList, setReviewList }) => {
                   </h3>
                 </div>
               ) : (
-                <div>
+                <div className="single__votesflex">
                   <img
                     className="vote__icon"
                     src="https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
                   ></img>
-                  <h3 className="single__votesText">{currentReview.votes} votes</h3>
+                  <h3 className="single__votesText">
+                    {currentReview.votes} votes
+                  </h3>
                 </div>
               )}
             </button>
