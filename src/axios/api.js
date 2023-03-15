@@ -16,6 +16,12 @@ export const getReviewById = (review_id) => {
   });
 };
 
+export const getComments = (review_id) => {
+  return boardgameApi.get(`/reviews/${review_id}/comments`).then((response) => {
+    return response.data;
+  });
+};
+
 export const patchVotes = (review_id, vote) => {
   return boardgameApi.patch(`/reviews/${review_id}`, vote).then((response) => {
     return response.data;

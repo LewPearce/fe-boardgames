@@ -23,14 +23,7 @@ export const Reviews = ({ reviewList, setReviewList }) => {
                     alt={`${review.title}`}
                     className="review__img"
                   ></img>
-                  <h3 className="review__votes">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/2961/2961957.png"
-                      alt="like"
-                      className="like"
-                    ></img>{" "}
-                    {review.votes} votes{" "}
-                  </h3>
+                  <h3 className="review__votes">{review.votes} votes</h3>
                   <h3 className="review__comments">
                     {review.comment_count} comments
                   </h3>

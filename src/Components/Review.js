@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { getReviewById, patchVotes } from "../axios/api";
 import { timeConverter } from "../utils";
 import { useParams } from "react-router-dom";
+import { Comments } from "./Comments";
 
 export const Review = ({ reviewList, setReviewList }) => {
   const { review_id } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [wantComments, setWantComments] = useState(false);
+  const [comments, setComments] = useState([]);
   const [liked, setLiked] = useState(false);
   const [vote, setVote] = useState(0);
 
@@ -37,6 +40,15 @@ export const Review = ({ reviewList, setReviewList }) => {
     });
   }, [setCurrentReview, review_id]);
 
+  const handleComments = (event) => {
+    event.preventDefault();
+    if (wantComments) {
+      setWantComments(false);
+    } else {
+      setWantComments(true);
+    }
+  };
+
   if (isLoading) {
     return <h1>LOADING</h1>;
   } else {
@@ -55,6 +67,7 @@ export const Review = ({ reviewList, setReviewList }) => {
               {liked ? (
                 <div className="single__votesflex">
                   <img
+                    alt="liked"
                     className="vote__icon"
                     src="https://cdn-icons-png.flaticon.com/512/2589/2589054.png"
                   ></img>
@@ -65,6 +78,7 @@ export const Review = ({ reviewList, setReviewList }) => {
               ) : (
                 <div className="single__votesflex">
                   <img
+                    alt="not liked"
                     className="vote__icon"
                     src="https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
                   ></img>
@@ -85,9 +99,16 @@ export const Review = ({ reviewList, setReviewList }) => {
             ></img>
             <p className="single__para">{currentReview.review_body}</p>
           </div>
-          <h3 className="single__comments">
-            {currentReview.comment_count} comments
-          </h3>
+          <button onClick={handleComments} className="single__commentButton">
+            Show Comments
+          </button>
+          {wantComments ? (
+            <Comments
+              setComments={setComments}
+              review_id={review_id}
+              comments={comments}
+            />
+          ) : null}
         </section>
       </>
     );

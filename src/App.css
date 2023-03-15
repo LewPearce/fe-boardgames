@@ -19,7 +19,6 @@ p {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .App {
-  text-align: center;
   padding: 0px;
   margin: 0px;
   background-color: var(--main);
@@ -31,6 +30,7 @@ p {
 }
 
 .headerNav {
+  text-align: center;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -39,6 +39,7 @@ p {
 }
 
 .Header {
+  text-align: center;
   padding: 0px;
   margin: 0px;
   background-color: var(--main);
@@ -232,6 +233,13 @@ p {
   text-decoration: none;
 }
 
+.single__commentButton {
+  background-color: var(--opacity);
+  border-style: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
 .review__title {
   background-color: var(--opacity);
   border-radius: 5px;
@@ -275,4 +283,17 @@ p {
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
+}
+
+.comment__list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.comments {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
 }
