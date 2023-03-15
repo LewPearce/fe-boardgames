@@ -19,7 +19,6 @@ p {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .App {
-
   padding: 0px;
   margin: 0px;
   background-color: var(--main);
@@ -31,6 +30,7 @@ p {
 }
 
 .headerNav {
+  text-align: center;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -39,6 +39,7 @@ p {
 }
 
 .Header {
+  text-align: center;
   padding: 0px;
   margin: 0px;
   background-color: var(--main);
@@ -168,7 +169,7 @@ p {
   border-radius: 5px;
   text-decoration: none;
   margin: 10px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .single__category {

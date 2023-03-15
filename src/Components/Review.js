@@ -70,7 +70,7 @@ export const Review = ({ reviewList, setReviewList }) => {
               comments={comments}
             />
           ) : (
-            <div></div>
+            <></>
           )}
         </section>
       </>
