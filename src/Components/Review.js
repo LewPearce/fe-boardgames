@@ -69,9 +69,7 @@ export const Review = ({ reviewList, setReviewList }) => {
               review_id={review_id}
               comments={comments}
             />
-          ) : (
-            <></>
-          )}
+          ) : null}
         </section>
       </>
     );
