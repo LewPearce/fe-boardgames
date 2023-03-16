@@ -11,16 +11,15 @@ export const Review = ({ reviewList, setReviewList }) => {
   const [wantComments, setWantComments] = useState(false);
   const [comments, setComments] = useState([]);
   const [liked, setLiked] = useState(false);
+  const [noConnection, setNoConnection] = useState(false);
 
   const handleLike = () => {
     let vote = 0;
     setLiked((current) => !current);
     liked ? (vote = -1) : (vote = 1);
     patchVotes(review_id, { inc_votes: vote }).catch((err) => {
-      alert(
-        "there was a problem liking this review, please reload the page and try again"
-      );
-      setLiked(true);
+      setNoConnection(true);
+      setLiked((current) => !current);
     });
   };
 
@@ -39,6 +38,10 @@ export const Review = ({ reviewList, setReviewList }) => {
     } else {
       setWantComments(true);
     }
+  };
+
+  const handlePopUp = () => {
+    setNoConnection(false);
   };
 
   if (isLoading) {
@@ -74,6 +77,11 @@ export const Review = ({ reviewList, setReviewList }) => {
                   likes
                 </h3>
               </div>
+            </button>
+            <button className="popup" onClick={handlePopUp}>
+              {noConnection
+                ? "there was a problem liking this review, please reload the page and try again"
+                : null}
             </button>
             <h3 className="single__category">{currentReview.category}</h3>
           </div>
