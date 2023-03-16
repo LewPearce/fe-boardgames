@@ -11,26 +11,18 @@ export const Review = ({ reviewList, setReviewList }) => {
   const [wantComments, setWantComments] = useState(false);
   const [comments, setComments] = useState([]);
   const [liked, setLiked] = useState(false);
-  const [vote, setVote] = useState(0);
 
-  const handleLike = (event) => {
-    event.preventDefault();
-    if (liked) {
-      setLiked(false);
-      setVote(-1);
-    } else {
-      setLiked(true);
-      setVote(1);
-    }
-  };
-
-  useEffect(() => {
+  const handleLike = () => {
+    let vote = 0;
+    setLiked((current) => !current);
+    liked ? (vote = -1) : (vote = 1);
     patchVotes(review_id, { inc_votes: vote }).catch((err) => {
-      return alert(
+      alert(
         "there was a problem liking this review, please reload the page and try again"
       );
+      setLiked(true);
     });
-  }, [review_id, vote]);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -64,29 +56,24 @@ export const Review = ({ reviewList, setReviewList }) => {
           </div>
           <div className="single__catVote">
             <button onClick={handleLike} className="single__votes">
-              {liked ? (
-                <div className="single__votesflex">
-                  <img
-                    alt="liked"
-                    className="vote__icon"
-                    src="https://cdn-icons-png.flaticon.com/512/2589/2589054.png"
-                  ></img>
-                  <h3 className="single__votesText">
-                    {currentReview.votes + 1} votes
-                  </h3>
-                </div>
-              ) : (
-                <div className="single__votesflex">
-                  <img
-                    alt="not liked"
-                    className="vote__icon"
-                    src="https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
-                  ></img>
-                  <h3 className="single__votesText">
-                    {currentReview.votes} votes
-                  </h3>
-                </div>
-              )}
+              <div className="single__votesflex">
+                <img
+                  alt={liked ? "liked" : "not liked"}
+                  className="vote__icon"
+                  src={
+                    liked
+                      ? "https://cdn-icons-png.flaticon.com/512/2589/2589054.png"
+                      : "https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
+                  }
+                ></img>
+                <h3>
+                  {" "}
+                  {liked
+                    ? `${currentReview.votes + 1}`
+                    : `${currentReview.votes}`}{" "}
+                  likes
+                </h3>
+              </div>
             </button>
             <h3 className="single__category">{currentReview.category}</h3>
           </div>
