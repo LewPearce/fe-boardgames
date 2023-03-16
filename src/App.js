@@ -14,22 +14,29 @@ function App() {
   return (
     <div className="App">
       <div className="headerNav">
-      <Header></Header>
-      <Nav
-        user={user}
-        setUser={setUser}
-        currentCategory={currentCategory}
-      ></Nav>
+        <Header></Header>
+        <Nav
+          user={user}
+          setUser={setUser}
+          currentCategory={currentCategory}
+        ></Nav>
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route
           path="/reviews"
           element={
-            <Reviews reviewList={reviewList} setReviewList={setReviewList} />
+            <Reviews
+              reviewList={reviewList}
+              setReviewList={setReviewList}
+              user={user}
+            />
           }
         ></Route>
-        <Route path="/reviews/:review_id" element={<Review />}></Route>
+        <Route
+          path="/reviews/:review_id"
+          element={<Review user={user} />}
+        ></Route>
       </Routes>
     </div>
   );

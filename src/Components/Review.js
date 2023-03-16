@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Comments } from "./Comments";
 import { PostComment } from "./PostComment";
 
-export const Review = ({ reviewList, setReviewList }) => {
+export const Review = ({ reviewList, setReviewList, user }) => {
   const { review_id } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -100,7 +100,11 @@ export const Review = ({ reviewList, setReviewList }) => {
           </button>
           {wantComments ? (
             <div>
-              <PostComment></PostComment>
+              <PostComment
+                review_id={review_id}
+                user={user}
+                setComments={setComments}
+              ></PostComment>
               <Comments
                 setComments={setComments}
                 review_id={review_id}

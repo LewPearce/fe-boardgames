@@ -1,21 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { postComment } from "../axios/api";
 
-export const PostComment = (review_id) => {
+export const PostComment = ({ review_id, user, setComments }) => {
   const [newComment, setNewComment] = useState("");
+  console.log(user);
 
-  postComment(review_id, { body: "I love this game so much!" }).then(
-    (response) => {
-      console.log(response);
-    }
-  );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postComment(review_id, {
+      body: newComment,
+      username: user.username,
+    }).then(({ new_comment }) => {
+      setComments((currComments) => [new_comment, ...currComments]);
+      setNewComment("");
+    });
+  };
+
+  // DISABLE COMMENT BOX IF NOT LOGGED IN
 
   return (
     <>
-      <form>
-        <textarea className="comment__input" value={newComment}
-          onChange = {handleChange}>
-        </textarea>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          className="comment__input"
+          onChange={(event) => {
+            setNewComment(event.target.value);
+          }}
+          value={newComment}
+        ></textarea>
+        <button>Submit comment</button>
       </form>
     </>
   );
