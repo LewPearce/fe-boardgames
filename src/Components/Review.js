@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getReviewById } from "../axios/api";
+import { getReviewById, patchVotes } from "../axios/api";
 import { timeConverter } from "../utils";
 import { useParams } from "react-router-dom";
 import { Comments } from "./Comments";
@@ -11,6 +11,18 @@ export const Review = ({ reviewList, setReviewList }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [wantComments, setWantComments] = useState(false);
   const [comments, setComments] = useState([]);
+  const [liked, setLiked] = useState(false);
+  const [noConnection, setNoConnection] = useState(false);
+
+  const handleLike = () => {
+    let vote = 0;
+    setLiked((current) => !current);
+    liked ? (vote = -1) : (vote = 1);
+    patchVotes(review_id, { inc_votes: vote }).catch((err) => {
+      setNoConnection(true);
+      setLiked((current) => !current);
+    });
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,6 +41,10 @@ export const Review = ({ reviewList, setReviewList }) => {
     }
   };
 
+  const handlePopUp = () => {
+    setNoConnection(false);
+  };
+
   if (isLoading) {
     return <h1>LOADING</h1>;
   } else {
@@ -43,16 +59,34 @@ export const Review = ({ reviewList, setReviewList }) => {
             </div>
           </div>
           <div className="single__catVote">
-            <h3 className="single__votes">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2961/2961957.png"
-                alt="like"
-                className="like"
-              ></img>{" "}
-              {currentReview.votes} votes{" "}
-            </h3>
+            <button onClick={handleLike} className="single__votes">
+              <div className="single__votesflex">
+                <img
+                  alt={liked ? "liked" : "not liked"}
+                  className="vote__icon"
+                  src={
+                    liked
+                      ? "https://cdn-icons-png.flaticon.com/512/2589/2589054.png"
+                      : "https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
+                  }
+                ></img>
+                <h3>
+                  {" "}
+                  {liked
+                    ? `${currentReview.votes + 1}`
+                    : `${currentReview.votes}`}{" "}
+                  likes
+                </h3>
+              </div>
+            </button>
+            <button className="popup" onClick={handlePopUp}>
+              {noConnection
+                ? "there was a problem liking this review, please reload the page and try again"
+                : null}
+            </button>
             <h3 className="single__category">{currentReview.category}</h3>
           </div>
+
           <div className="imgPara">
             <img
               src={currentReview.review_img_url}

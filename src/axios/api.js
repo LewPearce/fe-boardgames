@@ -29,3 +29,9 @@ export const postComment = (review_id) => {
       return response.data;
     });
 };
+
+export const patchVotes = (review_id, vote) => {
+  return boardgameApi.patch(`/reviews/${review_id}`, vote).then((response) => {
+    return response.data;
+  });
+};
