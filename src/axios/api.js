@@ -24,7 +24,7 @@ export const getComments = (review_id) => {
 
 export const postComment = (review_id) => {
   return boardgameApi
-    .post(`re/reviews/${review_id}/comments`)
+    .post(`/reviews/${review_id}/comments`)
     .then((response) => {
       return response.data;
     });
