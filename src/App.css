@@ -169,7 +169,28 @@ p {
   border-radius: 5px;
   text-decoration: none;
   margin: 10px;
-  font-size: 24px;
+}
+
+.single__votes:active {
+  box-shadow: inset 0px 0px 10px #f9595f;
+}
+
+.single__votesflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
+  font-style: normal;
+}
+
+.vote__icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 .single__category {
@@ -264,10 +285,6 @@ p {
   text-decoration: none;
 }
 
-.like {
-  width: 13px;
-}
-
 .comment__list {
   list-style: none;
   margin: 0px;
@@ -279,4 +296,13 @@ p {
   border-radius: 5px;
   list-style: none;
   margin: 5px;
+}
+
+.popup {
+  border-style: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+  background-color: #00000000;
 }
