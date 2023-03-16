@@ -280,3 +280,8 @@ p {
   list-style: none;
   margin: 5px;
 }
+
+.comment__input {
+  width: 95%;
+  height:70px;
+}

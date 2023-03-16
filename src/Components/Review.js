@@ -3,6 +3,7 @@ import { getReviewById } from "../axios/api";
 import { timeConverter } from "../utils";
 import { useParams } from "react-router-dom";
 import { Comments } from "./Comments";
+import { PostComment } from "./PostComment";
 
 export const Review = ({ reviewList, setReviewList }) => {
   const { review_id } = useParams();
@@ -64,11 +65,14 @@ export const Review = ({ reviewList, setReviewList }) => {
             Show Comments
           </button>
           {wantComments ? (
-            <Comments
-              setComments={setComments}
-              review_id={review_id}
-              comments={comments}
-            />
+            <div>
+              <PostComment></PostComment>
+              <Comments
+                setComments={setComments}
+                review_id={review_id}
+                comments={comments}
+              />
+            </div>
           ) : null}
         </section>
       </>
