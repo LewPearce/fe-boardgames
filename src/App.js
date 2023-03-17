@@ -6,6 +6,8 @@ import { Review } from "./Components/Review";
 import { Reviews } from "./Components/Reviews";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { Categories } from "./Components/Categories";
+import { Category } from "./Components/Category";
 
 function App() {
   const [user, setUser] = useState("");
@@ -14,13 +16,12 @@ function App() {
   return (
     <div className="App">
       <div className="headerNav">
-          <Header></Header>
-          <Nav
-            user={user}
-            setUser={setUser}
-            currentCategory={currentCategory}
-          setCurrentCategory={setCurrentCategory}
-          ></Nav>
+        <Header></Header>
+        <Nav
+          user={user}
+          setUser={setUser}
+          currentCategory={currentCategory}
+        ></Nav>
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -36,7 +37,17 @@ function App() {
         ></Route>
         <Route
           path="/reviews/:review_id"
-          element={<Review user={user} />}
+          element={
+            <Review user={user} setCurrentCategory={setCurrentCategory} />
+          }
+        ></Route>
+        <Route
+          path="/categories"
+          element={<Categories setCurrentCategory={setCurrentCategory} />}
+        ></Route>
+        <Route
+          path="/categories/:category"
+          element={<Category currentCategory={currentCategory} />}
         ></Route>
       </Routes>
     </div>

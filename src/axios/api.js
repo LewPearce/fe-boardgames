@@ -35,3 +35,17 @@ export const patchVotes = (review_id, vote) => {
     return response.data;
   });
 };
+
+export const getCategories = () => {
+  return boardgameApi.get("/categories").then((response) => {
+    return response.data.categories;
+  });
+};
+
+export const getReviewsFromCat = (currentCategory) => {
+  return boardgameApi
+    .get(`/reviews?category=${currentCategory}`)
+    .then((response) => {
+      return response.data.reviews;
+    });
+};
