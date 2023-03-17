@@ -4,10 +4,12 @@ const boardgameApi = axios.create({
   baseURL: "https://lews-boardgame-api.onrender.com/api",
 });
 
-export const getReviews = () => {
-  return boardgameApi.get("/reviews").then((response) => {
-    return response.data.reviews;
-  });
+export const getReviews = (category) => {
+  return boardgameApi
+    .get("/reviews", { params: { category } })
+    .then((response) => {
+      return response.data.reviews;
+    });
 };
 
 export const getReviewById = (review_id) => {
@@ -40,12 +42,4 @@ export const getCategories = () => {
   return boardgameApi.get("/categories").then((response) => {
     return response.data.categories;
   });
-};
-
-export const getReviewsFromCat = (currentCategory) => {
-  return boardgameApi
-    .get(`/reviews?category=${currentCategory}`)
-    .then((response) => {
-      return response.data.reviews;
-    });
 };

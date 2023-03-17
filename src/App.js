@@ -7,7 +7,6 @@ import { Reviews } from "./Components/Reviews";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Categories } from "./Components/Categories";
-import { Category } from "./Components/Category";
 
 function App() {
   const [user, setUser] = useState("");
@@ -47,7 +46,13 @@ function App() {
         ></Route>
         <Route
           path="/categories/:category"
-          element={<Category currentCategory={currentCategory} />}
+          element={
+            <Reviews
+              currentCategory={currentCategory}
+              reviewList={reviewList}
+              setReviewList={setReviewList}
+            />
+          }
         ></Route>
       </Routes>
     </div>

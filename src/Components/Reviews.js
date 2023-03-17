@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { getReviews } from "../axios/api";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export const Reviews = ({ reviewList, setReviewList, user }) => {
+export const Reviews = ({ reviewList, setReviewList }) => {
+  const { category } = useParams();
+
   useEffect(() => {
-    getReviews().then((reviews) => {
+    getReviews(category).then((reviews) => {
       setReviewList(reviews);
     });
-  }, [setReviewList]);
-
- 
+  }, [category, setReviewList]);
 
   return (
     <>
@@ -17,11 +17,7 @@ export const Reviews = ({ reviewList, setReviewList, user }) => {
         {reviewList.map((review) => {
           return (
             <li key={review.review_id}>
-              <Link
-                to={`/reviews/${review.review_id}`}
-                className="Link"
-           
-              >
+              <Link to={`/reviews/${review.review_id}`} className="Link">
                 <section className="review__card">
                   <h2 className="review__title"> {review.title}</h2>
                   <img
