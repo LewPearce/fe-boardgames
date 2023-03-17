@@ -6,6 +6,7 @@ import { Review } from "./Components/Review";
 import { Reviews } from "./Components/Reviews";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { Categories } from "./Components/Categories";
 
 function App() {
   const [user, setUser] = useState("");
@@ -14,12 +15,12 @@ function App() {
   return (
     <div className="App">
       <div className="headerNav">
-      <Header></Header>
-      <Nav
-        user={user}
-        setUser={setUser}
-        currentCategory={currentCategory}
-      ></Nav>
+        <Header></Header>
+        <Nav
+          user={user}
+          setUser={setUser}
+          currentCategory={currentCategory}
+        ></Nav>
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -30,6 +31,7 @@ function App() {
           }
         ></Route>
         <Route path="/reviews/:review_id" element={<Review />}></Route>
+        <Route path="/categories" element={<Categories />}></Route>
       </Routes>
     </div>
   );
