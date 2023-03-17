@@ -28,9 +28,6 @@ export const PostComment = ({ review_id, user, setComments }) => {
     setNoConnection(false);
   };
 
-  if (posting) {
-    return;
-  }
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -49,14 +46,11 @@ export const PostComment = ({ review_id, user, setComments }) => {
               setNewComment(event.target.value);
             }}
             value={newComment}
-            disabled={user === "" ? true : false}
+            disabled={!user}
           ></textarea>
         )}
 
-        <button
-          className="single__commentButton"
-          disabled={user === "" ? true : false}
-        >
+        <button className="single__commentButton" disabled={!user}>
           {user ? "Submit Comment" : "Sign in to post a comment"}
         </button>
       </form>

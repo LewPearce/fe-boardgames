@@ -344,5 +344,5 @@ p {
 }
 
 .posting {
-  background-color: red;
+  background-color: var(--opacity);
 }

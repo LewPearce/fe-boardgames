@@ -20,7 +20,7 @@ export const Comments = ({ setComments, review_id, comments }) => {
       <>
         <ul className="comment__list">
           {comments.map((comment) => (
-            <li className="comments__card">
+            <li key={`${comment.comment_id}`} className="comments__card">
               <div className="authTime">
                 <h3 className="comments__author">{comment.author}</h3>
                 <h3 className="comments__time">{timeConverter(comment)}</h3>
