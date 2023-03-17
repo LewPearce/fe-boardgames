@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const Nav = ({ user, setUser, currentCategory }) => {
-  const handleLogIn = (event) => {
+  const handleLogIn = () => {
     if (user === "") {
       setUser({
         username: "grumpy19",

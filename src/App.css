@@ -1,7 +1,7 @@
 :root {
-  --opacity: #0000000d;
-  --main: #fcedc3;
-  --secondary: #2285ff67;
+  --opacity: #eea07ca1;
+  --main: #fbf0e9;
+  --secondary: #ffbe5c;
 }
 
 h1 {
@@ -328,11 +328,47 @@ p {
   padding: 0px;
 }
 
-.comments {
+.comments__card {
   background-color: var(--opacity);
   border-radius: 5px;
   list-style: none;
   margin: 5px;
+  padding: 5px;
+}
+
+.authTime {
+  display: flex;
+  align-items: flex-end;
+}
+
+.comments__author {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.comments__time {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.comments__body {
+  background-color: var(--opacity);
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+}
+
+.comment__input {
+  width: 99%;
+  height: 70px;
+  border-style: none;
+  border-radius: 5px;
 }
 
 .popup {
@@ -342,4 +378,8 @@ p {
   margin: 10px;
   font-size: 20px;
   background-color: #00000000;
+}
+
+.posting {
+  background-color: var(--opacity);
 }
