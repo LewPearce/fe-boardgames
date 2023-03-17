@@ -342,3 +342,7 @@ p {
   font-size: 20px;
   background-color: #00000000;
 }
+
+.posting {
+  background-color: red;
+}
