@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Comments } from "./Comments";
 import { PostComment } from "./PostComment";
 
-export const Review = ({ reviewList, setReviewList, user }) => {
+export const Review = ({ user, setCurrentCategory }) => {
   const { review_id } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +50,7 @@ export const Review = ({ reviewList, setReviewList, user }) => {
   } else {
     return (
       <>
+        {setCurrentCategory("")}
         <section className="single__card">
           <div className="single__headers">
             <h2 className="single__title"> {currentReview.title}</h2>
@@ -70,7 +71,7 @@ export const Review = ({ reviewList, setReviewList, user }) => {
                       : "https://cdn-icons-png.flaticon.com/512/2589/2589197.png"
                   }
                 ></img>
-                <h3>
+                <h3 className="likes__text">
                   {" "}
                   {liked
                     ? `${currentReview.votes + 1}`

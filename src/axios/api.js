@@ -41,3 +41,11 @@ export const getCategories = () => {
     return response.data.categories;
   });
 };
+
+export const getReviewsFromCat = (currentCategory) => {
+  return boardgameApi
+    .get(`/reviews?category=${currentCategory}`)
+    .then((response) => {
+      return response.data.reviews;
+    });
+};

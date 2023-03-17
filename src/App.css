@@ -1,7 +1,7 @@
 :root {
-  --opacity: #eea07ca1;
-  --main: #fbf0e9;
-  --secondary: #ffbe5c;
+  --opacity: #6dabfc;
+  --main: #ffffff;
+  --secondary: #212121;
 }
 
 h1 {
@@ -168,7 +168,8 @@ p {
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
-  margin: 10px;
+  margin: 5px;
+  border-style: none;
 }
 
 .single__votes:active {
@@ -185,6 +186,11 @@ p {
   margin: 0px;
   font-size: 18px;
   font-style: normal;
+}
+
+.likes__text {
+  padding: 0px;
+  margin: 0px;
 }
 
 .vote__icon {
