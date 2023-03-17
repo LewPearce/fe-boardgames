@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getComments } from "../axios/api";
-import { useParams } from "react-router-dom";
 
 export const Comments = ({ setComments, review_id, comments }) => {
   const [isLoading, setIsLoading] = useState(true);
