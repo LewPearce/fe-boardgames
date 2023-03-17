@@ -14,12 +14,13 @@ function App() {
   return (
     <div className="App">
       <div className="headerNav">
-        <Header></Header>
-        <Nav
-          user={user}
-          setUser={setUser}
-          currentCategory={currentCategory}
-        ></Nav>
+          <Header></Header>
+          <Nav
+            user={user}
+            setUser={setUser}
+            currentCategory={currentCategory}
+          setCurrentCategory={setCurrentCategory}
+          ></Nav>
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
