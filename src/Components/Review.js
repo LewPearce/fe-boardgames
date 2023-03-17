@@ -3,8 +3,9 @@ import { getReviewById, patchVotes } from "../axios/api";
 import { timeConverter } from "../utils";
 import { useParams } from "react-router-dom";
 import { Comments } from "./Comments";
+import { PostComment } from "./PostComment";
 
-export const Review = ({ reviewList, setReviewList }) => {
+export const Review = ({ reviewList, setReviewList, user }) => {
   const { review_id } = useParams();
   const [currentReview, setCurrentReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -98,11 +99,18 @@ export const Review = ({ reviewList, setReviewList }) => {
             Show Comments
           </button>
           {wantComments ? (
-            <Comments
-              setComments={setComments}
-              review_id={review_id}
-              comments={comments}
-            />
+            <div>
+              <PostComment
+                review_id={review_id}
+                user={user}
+                setComments={setComments}
+              ></PostComment>
+              <Comments
+                setComments={setComments}
+                review_id={review_id}
+                comments={comments}
+              />
+            </div>
           ) : null}
         </section>
       </>

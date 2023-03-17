@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getComments } from "../axios/api";
+import { timeConverter } from "../utils";
 
 export const Comments = ({ setComments, review_id, comments }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,13 @@ export const Comments = ({ setComments, review_id, comments }) => {
       <>
         <ul className="comment__list">
           {comments.map((comment) => (
-            <li className="comments">{comment.body}</li>
+            <li key={`${comment.comment_id}`} className="comments__card">
+              <div className="authTime">
+                <h3 className="comments__author">{comment.author}</h3>
+                <h3 className="comments__time">{timeConverter(comment)}</h3>
+              </div>
+              <h3 className="comments__body">{comment.body}</h3>
+            </li>
           ))}
         </ul>
       </>
