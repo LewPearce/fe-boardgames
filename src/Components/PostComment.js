@@ -4,6 +4,7 @@ import { postComment } from "../axios/api";
 export const PostComment = ({ review_id, user, setComments }) => {
   const [newComment, setNewComment] = useState("");
   const [posting, setPosting] = useState(false);
+  const [noConnection, setNoConnection] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,11 +12,20 @@ export const PostComment = ({ review_id, user, setComments }) => {
     postComment(review_id, {
       body: newComment,
       username: user.username,
-    }).then(({ new_comment }) => {
-      setComments((currComments) => [new_comment, ...currComments]);
-      setNewComment("");
-      setPosting(false);
-    });
+    })
+      .then(({ new_comment }) => {
+        setComments((currComments) => [new_comment, ...currComments]);
+        setNewComment("");
+        setPosting(false);
+      })
+      .catch(() => {
+        setNoConnection(true);
+        setPosting(false);
+      });
+  };
+
+  const handlePopUp = () => {
+    setNoConnection(false);
   };
 
   if (posting) {
@@ -24,6 +34,12 @@ export const PostComment = ({ review_id, user, setComments }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <button className="popup" onClick={handlePopUp}>
+          {noConnection
+            ? "there was a problem submitting your comment, please reload the page and try again"
+            : null}
+        </button>
+
         {posting ? (
           <h2 className="posting">posting your comment...</h2>
         ) : (
