@@ -1,27 +1,41 @@
 :root {
   --opacity: #6dabfc;
-  --main: #94f1f8;
-  --secondary: #212121;
+  --main: #ff7b7b;
+  --secondary: #ff7b7b;
 }
 
 h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
 
 h2 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--secondary);
+}
+h3 {
+  color: var(--secondary);
 }
 
 p {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--secondary);
+  font-size: 1.5vw;
 }
+
+body {
+  background-image: url("../src/background.jpg");
+  background-color: #cccccc;
+  background-size: contain;
+}
+
 .App {
   padding: 0px;
   margin: 0px;
-  background-color: var(--main);
   text-decoration: none;
 }
 
@@ -32,19 +46,28 @@ p {
 .headerNav {
   text-align: center;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: space-around;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .Header {
+  font-size: 2vw;
   text-align: center;
-  padding: 0px;
-  margin: 0px;
+  padding: 10px;
+  margin-top: 20px;
   background-color: var(--main);
   color: var(--secondary);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @media only screen and (max-width: 600px) {
@@ -58,8 +81,8 @@ p {
   margin: 0px;
   list-style: none;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  /* align-content: center;
+  justify-content: center; */
 }
 
 .Nav__Button {
@@ -69,14 +92,24 @@ p {
   color: rgb(0, 0, 0);
   border-style: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 28px;
   text-decoration: none;
   color: var(--secondary);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 
 .Nav__Button:hover {
   background-color: var(--secondary);
   color: var(--main);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 
 .logged {
@@ -85,6 +118,14 @@ p {
   margin: 0px;
   padding: 0px;
   font-size: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 
 .review__list {
@@ -98,6 +139,9 @@ p {
 }
 
 .review__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 30vw;
   list-style: none;
   margin: 5px;
@@ -106,6 +150,14 @@ p {
   border-radius: 10px;
   text-decoration: none;
   color: var(--secondary);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 
 .review__card:hover {
@@ -125,6 +177,12 @@ p {
   background-color: var(--secondary);
   border-radius: 10px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__headers {
@@ -139,6 +197,12 @@ p {
   text-decoration: none;
   margin: 10px;
   font-size: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__timeUser {
@@ -152,11 +216,23 @@ p {
   background-color: var(--opacity);
   border-radius: 5px;
   margin: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .single__user {
   background-color: var(--opacity);
   border-radius: 5px;
   margin: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__catVote {
@@ -171,6 +247,12 @@ p {
   text-decoration: none;
   margin: 5px;
   border-style: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__votes:active {
@@ -205,6 +287,12 @@ p {
   border-radius: 5px;
   margin: 10px;
   font-size: 24px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .imgPara {
@@ -232,12 +320,24 @@ p {
   background-color: var(--opacity);
   border-radius: 5px;
   margin: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__comments {
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .single__commentButton {
@@ -245,26 +345,58 @@ p {
   border-style: none;
   border-radius: 5px;
   font-size: 20px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .review__title {
+  padding: 3px;
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .review__time {
   background-color: var(--opacity);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .review__user {
   background-color: var(--opacity);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .review__category {
   background-color: var(--opacity);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .category__list {
@@ -285,6 +417,12 @@ p {
   padding: 5px;
   border-radius: 10px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .category__title {
@@ -292,6 +430,15 @@ p {
   color: var(--secondary);
   font-size: 40px;
   margin: 0px;
+
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
 
 .category__description {
@@ -302,12 +449,18 @@ p {
   text-decoration: none;
   color: var(--secondary);
   font-size: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .review__img {
   border-radius: 10px;
-  width: 70%;
-  max-height: 180px;
+  width: 90%;
+
   margin: 0px;
   padding: 0px;
 }
@@ -315,18 +468,44 @@ p {
 .review__para {
   background-color: var(--opacity);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.flex__horz {
+  display: flex;
+  flex-direction: row;
 }
 
 .review__comments {
+  padding: 3px;
+  margin-left: 20px;
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .review__votes {
+  padding: 3px;
   background-color: var(--opacity);
   border-radius: 5px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .comment__list {
@@ -341,6 +520,12 @@ p {
   list-style: none;
   margin: 5px;
   padding: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .authTime {
@@ -354,6 +539,12 @@ p {
   list-style: none;
   margin: 5px;
   font-size: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .comments__time {
@@ -362,6 +553,12 @@ p {
   list-style: none;
   margin: 5px;
   font-size: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .comments__body {
@@ -369,6 +566,12 @@ p {
   border-radius: 5px;
   list-style: none;
   margin: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .comment__input {
@@ -389,4 +592,10 @@ p {
 
 .posting {
   background-color: var(--opacity);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

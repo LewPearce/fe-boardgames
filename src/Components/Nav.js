@@ -18,22 +18,19 @@ export const Nav = ({ user, setUser, currentCategory }) => {
     <>
       <ul className="Nav">
         <li>
-          <button className="Nav__Button" onClick={handleLogIn}>
-            {user ? `Sign Out` : `Log In`}
-          </button>
-        </li>
-        <li>
           <Link to="/categories">
-            <button className="Nav__Button">
-              {" "}
-              {currentCategory || `Categories`}
-            </button>
+            <button className="Nav__Button">Categories</button>
           </Link>
         </li>
         <li>
           <Link to="/reviews">
             <button className="Nav__Button">Reviews</button>
           </Link>
+        </li>
+        <li>
+          <button className="Nav__Button" onClick={handleLogIn}>
+            {user ? `Sign Out` : `Log In`}
+          </button>
         </li>
       </ul>
       <div className="logged">

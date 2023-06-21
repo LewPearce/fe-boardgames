@@ -25,10 +25,12 @@ export const Reviews = ({ reviewList, setReviewList }) => {
                     alt={`${review.title}`}
                     className="review__img"
                   ></img>
-                  <h3 className="review__votes">{review.votes} votes</h3>
-                  <h3 className="review__comments">
-                    {review.comment_count} comments
-                  </h3>
+                  <div className="flex__horz">
+                    <h3 className="review__votes">{review.votes} votes</h3>
+                    <h3 className="review__comments">
+                      {review.comment_count} comments
+                    </h3>
+                  </div>
                 </section>
               </Link>
             </li>
